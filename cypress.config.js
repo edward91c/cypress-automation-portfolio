@@ -2,7 +2,9 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: 'https://opencart.abstracta.us',
+    // Se usa HTTP en lugar de HTTPS para evitar errores de Mixed Content en el entorno.
+    // HTTPS causaba que el navegador bloquee el envío del formulario durante las pruebas.
+    baseUrl: 'http://opencart.abstracta.us', //
     setupNodeEvents(on, config) { },
     //Window size
     viewportWidth: 1920,
@@ -16,7 +18,7 @@ module.exports = defineConfig({
       html: true,
       json: true,
       timestamp: "mmddyyyy_HHMMss",
-      reportFilename: "mochawesome"
+      reportFilename: "mochawesome",
     },
   },
 });

@@ -15,7 +15,7 @@ class Helper {
         return lastName;
     }
     generateRandomPhone() {
-        const phone = faker.phone.number("+1(###)###-####");
+        const phone = faker.phone.number("+1(###)###");
         return phone;
     }
     generateRandomPassword() {
