@@ -1,7 +1,7 @@
 import { registerPage } from "../pages/registerPage";
-import { myAccountPage } from "../pages/myAccountPage";
 import { congratulationsPage } from "../pages/congratulationsPage";
 import { helper } from "../../utils/helper";
+
 
 describe('Register flow', () => {
     beforeEach(() => {
@@ -29,8 +29,14 @@ describe('Register flow', () => {
         cy.url().should('include', '/success');
         // Verify that the success message is displayed
         congratulationsPage.getH1Text().should('be.visible');
-        congratulationsPage.getCongratulationsText().should('be.visible');
+        congratulationsPage.getCongratulationsText().should('have.text', congratulationsPage.successMessage);
+        congratulationsPage.getContinueButton().should('be.visible');
         congratulationsPage.getContinueButton().click();
-        myAccountPage.myAccountPageTitle.should('be.visible');
+        // Verify that the user is redirected to the My Account page
+        // cy.origin is used because after registration the app redirects from HTTP to HTTPS, causing an origin change.
+        cy.origin('https://opencart.abstracta.us',() => {
+            cy.url().should('include', '/account');
+        });
+
     });
 });

@@ -6,7 +6,7 @@ class CongratulationsPage {
     }
 
     getCongratulationsText() {
-        return cy.get('#content > p').first().should('have.text', this.successMessage);
+        return cy.get('#content > p').first();
     }
     getContinueButton() {
         return cy.get('.pull-right > .btn');

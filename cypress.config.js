@@ -2,8 +2,8 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    // Se usa HTTP en lugar de HTTPS para evitar errores de Mixed Content en el entorno.
-    // HTTPS causaba que el navegador bloquee el envío del formulario durante las pruebas.
+    // HTTP is used instead of HTTPS to avoid Mixed Content errors in the environment.
+    // HTTPS was causing the browser to block form submission during testing.
     baseUrl: 'http://opencart.abstracta.us', //
     setupNodeEvents(on, config) { },
     //Window size

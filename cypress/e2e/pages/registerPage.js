@@ -27,6 +27,7 @@ class RegisterPage {
     getContinueButton() {
         return cy.get('input[type="submit"][value="Continue"]');
     }
+    
 
 }
 export const registerPage = new RegisterPage();

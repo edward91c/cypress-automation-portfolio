@@ -1,6 +1,6 @@
 class MyAccountPage {
 
-    get myAccountPageTitle() {
+    getMyAccountPageTitle() {
         return cy.get('h2').contains('My Account');
     }
 
