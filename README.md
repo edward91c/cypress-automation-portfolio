@@ -133,8 +133,8 @@ npx cypress open
 
 ## 📌 Author
 
-Made by [Edward91c](https://github.com/edward91c)
-📧 Email: [tucorreo@example.com](mailto:edward1791c@gmail.com)  
-🔗 LinkedIn: [linkedin.com/in/tu-usuario](https://www.linkedin.com/in/edward-campeón-72aa8316b/ )
+Made by (https://github.com/edward91c)
+📧 Email: (mailto:edward1791c@gmail.com)  
+🔗 LinkedIn: (https://www.linkedin.com/in/edward-campeón-72aa8316b/ )
 
 Happy Testing! 🎯
