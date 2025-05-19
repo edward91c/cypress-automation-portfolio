@@ -1,49 +1,140 @@
-# Cypress Automation Portfolio
+# 🌐 Cypress Automation Portfolio
 
-Este repositorio contiene pruebas automatizadas E2E usando [Cypress](https://www.cypress.io/) sobre el sitio [opencart.abstracta.us](https://opencart.abstracta.us).
+This repository contains automated E2E tests using [Cypress](https://www.cypress.io/) on the site [opencart.abstracta.us](https://opencart.abstracta.us).
 
-## 📁 Estructura
+---
+
+## 📁 Structure
 
 ```
 cypress/
 ├── e2e/
 │   ├── pages/    # Page Objects
-│   └── specs/    # Casos de prueba
-├── fixtures/     # Datos de prueba
-├── reports/      # Reportes Mochawesome (ignorados en Git)
-├── support/      # Comandos y configuración global
+│   └── specs/    # Test specs
+├── fixtures/     # Test data
+├── reports/      # Mochawesome reports (ignored in Git)
+├── support/      # Custom commands and global configuration
+├── utils/        # Helper functions for fake data generation and utilities
 ```
 
-## 🔧 Herramientas
+---
 
-- **Cypress**
-- **Faker.js**: generación de datos aleatorios
-- **Mochawesome**: reporter visual de resultados
+## 🔧 Tools Used
 
-## 🚀 Cómo ejecutar
+* **Cypress**: E2E testing framework
+* **Faker.js**: Random data generation (used in `utils/helper.js`)
+* **Mochawesome**: Visual HTML/JSON test reporter
 
-1. Instalar dependencias:
+---
+
+## ⚙️ Cypress Configuration
+
+Located in `cypress.config.js`. Highlights:
+
+* **Base URL**: `http://opencart.abstracta.us`
+* **Viewport size**: 1920x1080
+* **Reporter**: Mochawesome with HTML and JSON output to `cypress/reports`
+
+---
+
+## 🚀 How to Set Up and Run Tests (Step-by-Step)
+
+### 📋 Prerequisites
+
+* ✅ Make sure you have **Node.js** installed.
+  👉 Download from [https://nodejs.org](https://nodejs.org)
+
+### 🛠️ Installation & Execution
+
+1️⃣ **Clone the repository**
+
+```bash
+git clone https://github.com/edward91c/cypress-automation-portfolio.git
+```
+
+2️⃣ **Navigate into the project**
+
+```bash
+cd cypress-automation-portfolio
+```
+
+3️⃣ **Install dependencies**
 
 ```bash
 npm install
 ```
 
-2. Correr los tests:
+4️⃣ **Run tests in interactive mode**
 
 ```bash
 npx cypress open
 ```
 
-3. Generar reportes (si usás `mochawesome`):
+5️⃣ **Run all tests headlessly and generate reports**
 
 ```bash
 npx cypress run
 ```
 
-El reporte se guardará en `cypress/reports`.
+6️⃣ **View Test Reports (Optional)**
 
-## 🌱 Flujo de ramas
+* Reports are automatically saved to:
 
-- `main`: solo contiene estructura base y configuración.
-- `feature/<nombre>`: cada flujo (register, login, checkout, etc.) se trabaja en su propia rama.
+  ```
+  cypress/reports/
+  ```
 
+7️⃣ **Clean up old reports**
+
+```bash
+rm -rf cypress/reports/*
+```
+
+---
+
+## 🌱 Branching Workflow
+
+* 🌿 **`main`**: Contains base structure, configuration, and all completed test cases.
+* ✨ **`feature/<name>`**: Each feature flow (register, login, checkout, etc.) is developed in its own branch.
+
+---
+
+## ✅ Test Scenarios Covered
+
+* ✅ Register new user
+* ✅ Successful login
+* ✅ Invalid login attempt
+* ✅ Add product to cart
+* ✅ Checkout flow
+
+---
+
+## 🧪 How to Add a New Test
+
+1. Create a new file inside `cypress/e2e/specs/`
+2. Use page object methods from `cypress/e2e/pages/`
+3. Use fake data functions from `cypress/utils/helper.js`
+4. Run tests locally using:
+
+```bash
+npx cypress open
+```
+
+---
+
+## 🧠 Best Practices
+
+- Use page objects to encapsulate UI logic.
+- Prefer selectors with data attributes (`[data-cy="..."]`) for stability.
+- Avoid using `.wait()` unless absolutely necessary.
+- Keep tests independent and idempotent.
+
+---
+
+## 📌 Author
+
+Made by [Edward91c](https://github.com/edward91c)
+📧 Email: [tucorreo@example.com](mailto:edward1791c@gmail.com)  
+🔗 LinkedIn: [linkedin.com/in/tu-usuario](https://www.linkedin.com/in/edward-campeón-72aa8316b/ )
+
+Happy Testing! 🎯
