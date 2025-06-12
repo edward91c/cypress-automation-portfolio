@@ -109,6 +109,13 @@ rm -rf cypress/reports/*
 
 ---
 
+## ⚠️ Note about the current test version
+
+This is an initial version of the test cases, primarily focused on basic validations and error messages. Future updates will include additional scenarios, more thorough validations, and improvements in test robustness.
+The intention is to maintain this foundation and progressively enhance it by following best practices and expanding test coverage.
+
+---
+
 ## 🧪 How to Add a New Test
 
 1. Create a new file inside `cypress/e2e/specs/`

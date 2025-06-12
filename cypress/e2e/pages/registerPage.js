@@ -1,5 +1,5 @@
 class RegisterPage {
-
+    //Getters for elements on the Register page
     getRegisterH1Title() {
         return cy.get('h1').contains('Account');
     }
@@ -39,6 +39,7 @@ class RegisterPage {
         privacyPolicy: 'Warning: You must agree to the Privacy Policy!'
     };
 
+    //Getters for validation messages
     getFirstNameValidationMessage() {
         return cy.get('#input-firstname + .text-danger');
     }
@@ -58,14 +59,7 @@ class RegisterPage {
         return cy.get('#input-confirm + .text-danger');
     }
     getPrivacyPolicyValidationMessage() {
-        return cy.get('');
-    }
-
-    getInputById(id) {
-        return cy.get(`#${id}`);
-    }
-    getValidationMessageById(id) {
-        return cy.get(`#${id} + .text-danger`);
+        return cy.contains('Warning: You must agree to the Privacy Policy!');
     }
 
 }
